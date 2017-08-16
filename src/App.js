@@ -5,6 +5,15 @@ import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 import Footer from './components/Footer'
 class App extends Component {
+  state ={
+    todos: [
+      {id: 1, name:"Aprender React"},
+      {id: 2, name:"Aprender Redux"},
+      {id: 3, name:"Aprender JS"},
+      {id: 4, name:"Aprender ES6"},
+      {id: 5, name:"Aprender HTML"}
+    ]
+  }
     render() {
       return (< div className="App" >
         <div className="App-header">
@@ -13,7 +22,7 @@ class App extends Component {
           </div> 
           <div >
               <TodoForm />
-              <TodoList />
+              <TodoList todos={this.state.todos} />
               <Footer />
               </div>
 

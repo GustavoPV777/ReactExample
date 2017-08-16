@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-const TodoList = () => (
-  <div className = "contenido">
-                  <li>Aprender React</li>
-                  <li>Aprender Redux</li>
-                  <li>Aprender JS</li>
-                  <li>Aprender ES6</li>
-            </div>
-)
+class TodoList extends Component {
+  render() {
+    console.log(this.props);
+    return (
+      <div className = "contenido">
+        <ul>
+          {
+            this.props.todos.map(todo => <li key={todo.id}>{todo.name}</li>)
+          }
+          </ul>
+        </div>
+        
+    )
+  }
+}
 export default TodoList
