@@ -14,6 +14,9 @@ class App extends Component {
       {id: 5, name:"Aprender HTML"}
     ]
   }
+  handleSubmit = () => {
+    console.log('evento ejecutado')
+  }
     render() {
       return (< div className="App" >
         <div className="App-header">
@@ -21,7 +24,7 @@ class App extends Component {
           <h2 > Proyecto TODO </h2>   
           </div> 
           <div >
-              <TodoForm />
+              <TodoForm handleSubmit={this.handleSubmit}/>
               <TodoList todos={this.state.todos} />
               <Footer />
               </div>
